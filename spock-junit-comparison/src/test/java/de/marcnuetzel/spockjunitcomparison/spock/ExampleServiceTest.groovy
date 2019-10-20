@@ -2,10 +2,12 @@ package de.marcnuetzel.spockjunitcomparison.spock
 
 import de.marcnuetzel.spockjunitcomparison.service.ExampleService
 import spock.lang.Specification
+import spock.lang.Title
 
 /**
  * Created by Marc Nützel on 20.10.19.
  */
+@Title("Testing the ExampleService")
 class ExampleServiceTest extends Specification {
 
     public static final String EXAMPLE_NAME = "world"
