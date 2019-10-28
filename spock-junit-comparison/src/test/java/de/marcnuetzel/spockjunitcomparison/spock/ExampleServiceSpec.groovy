@@ -3,12 +3,13 @@ package de.marcnuetzel.spockjunitcomparison.spock
 import de.marcnuetzel.spockjunitcomparison.service.ExampleService
 import spock.lang.Specification
 import spock.lang.Title
+import spock.lang.Unroll
 
 /**
  * Created by Marc Nützel on 20.10.19.
  */
 @Title("Testing the ExampleService")
-class ExampleServiceTest extends Specification {
+class ExampleServiceSpec extends Specification {
 
     public static final String EXAMPLE_NAME = "world"
     ExampleService exampleService
@@ -27,6 +28,7 @@ class ExampleServiceTest extends Specification {
         exampleService.helloWorld(EXAMPLE_NAME).contains("buggy")
     }
 
+    //@Unroll
     def "When exampleService.helloWorld is triggered then result should return Hello + provided name"() {
         expect:
         exampleService.helloWorld(name).contains(returnValue)
