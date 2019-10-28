@@ -1,6 +1,7 @@
 package de.marcnuetzel.spockjunitcomparison.spock
 
 import de.marcnuetzel.spockjunitcomparison.service.ExampleService
+import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Title
 import spock.lang.Unroll
@@ -11,12 +12,8 @@ import spock.lang.Unroll
 @Title("Testing the ExampleService")
 class ExampleServiceSpec extends Specification {
 
-    public static final String EXAMPLE_NAME = "world"
-    ExampleService exampleService
-
-    def setup() {
-        this.exampleService = new ExampleService()
-    }
+    static final String EXAMPLE_NAME = "world"
+    @Shared exampleService = new ExampleService()
 
     def "When exampleService.helloWorld is triggered then result should contain Hello."() {
         expect:
